@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://blb2474w56v7q"]
+
+[ext_resource type="Script" uid="uid://cwbjk3f1r3a3k" path="res://scrpit/exp.gd" id="1_l6d25"]
+[ext_resource type="Texture2D" uid="uid://csq1v3onry4yk" path="res://pixelsart/main/exp.png" id="1_rtaji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtaji"]
+atlas = ExtResource("1_rtaji")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3xen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtaji")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtaji"]
+radius = 7.0
+
+[node name="Area2D" type="Area2D" unique_id=474541543 groups=["item"]]
+script = ExtResource("1_l6d25")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1821452008]
+scale = Vector2(0.41, 0.41)
+sprite_frames = SubResource("SpriteFrames_q3xen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=61630430]
+shape = SubResource("CircleShape2D_rtaji")
+
+[connection signal="body_entered" from="." to="." method="was_get"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bq47b01i7iwev"]
+
+[ext_resource type="Texture2D" uid="uid://y7y1qje7ywvk" path="res://pixelsart/main/2 Punk/Punk_hurt.png" id="1_bbenm"]
+[ext_resource type="Script" uid="uid://daidqojl426ii" path="res://scence/hittedhunter.gd" id="1_obv1r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obv1r"]
+atlas = ExtResource("1_bbenm")
+region = Rect2(0, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqe8n"]
+atlas = ExtResource("1_bbenm")
+region = Rect2(48, 0, 24, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tqxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obv1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqe8n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="hittedhunter" type="Node2D" unique_id=1525682988]
+script = ExtResource("1_obv1r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1315812108]
+sprite_frames = SubResource("SpriteFrames_5tqxe")
+autoplay = "default"
+frame = 1
+frame_progress = 0.3729724

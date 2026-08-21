@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b3s3joygqiop"]
+
+[ext_resource type="Script" uid="uid://df13r5ylplewf" path="res://scence/corpse/hunter_death.gd" id="1_gsh7i"]
+[ext_resource type="Texture2D" uid="uid://c6rkuovtmihwt" path="res://pixelsart/main/2 Punk/Punk_death.png" id="1_h287a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsh7i"]
+atlas = ExtResource("1_h287a")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0md4"]
+atlas = ExtResource("1_h287a")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb8re"]
+atlas = ExtResource("1_h287a")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wna7"]
+atlas = ExtResource("1_h287a")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efodr"]
+atlas = ExtResource("1_h287a")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1for2"]
+atlas = ExtResource("1_h287a")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tqxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsh7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0md4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb8re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wna7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efodr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1for2")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1943437310]
+script = ExtResource("1_gsh7i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=576000793]
+sprite_frames = SubResource("SpriteFrames_5tqxe")
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1491648717]
+zoom = Vector2(2.31, 2.31)

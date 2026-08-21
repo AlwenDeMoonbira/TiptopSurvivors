@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://djnm8jwr4w5u4"]
+
+[ext_resource type="Texture2D" uid="uid://cduq0xlbl4hfg" path="res://pixelsart/main/bg.png" id="1_5e5gi"]
+[ext_resource type="Texture2D" uid="uid://ct83gbfc0q6kf" path="res://pixelsart/Cyberpunk_alleyway_pixel_art_bac…_202608112230.jpeg" id="1_f1lcf"]
+[ext_resource type="Script" uid="uid://dthrq5ymqeneb" path="res://scrpit/God_and_world.gd" id="1_nkl5o"]
+[ext_resource type="PackedScene" uid="uid://ch68c2apee18e" path="res://scence/hunter.tscn" id="2_fnono"]
+[ext_resource type="PackedScene" uid="uid://1jrosdowllt5" path="res://scence/slime.tscn" id="3_hid7t"]
+[ext_resource type="PackedScene" uid="uid://bn4v86ve13k5x" path="res://scence/heatheart.tscn" id="5_xiwrf"]
+[ext_resource type="Script" uid="uid://bvu4enfq25mda" path="res://scrpit/ui.gd" id="6_q312n"]
+[ext_resource type="PackedScene" uid="uid://blb2474w56v7q" path="res://scence/exp.tscn" id="7_4bk23"]
+[ext_resource type="Texture2D" uid="uid://gtlattgdgw5e" path="res://pixelsart/Pause/Window.png" id="7_hdle2"]
+[ext_resource type="Texture2D" uid="uid://c34y3vm2f6mc6" path="res://pixelsart/Pause/Table.png" id="9_hsfsx"]
+[ext_resource type="Texture2D" uid="uid://d3fh0n015xig3" path="res://pixelsart/relic/PNG/Transperent/Icon1.png" id="10_hsfsx"]
+[ext_resource type="FontFile" uid="uid://bopxh3qb4sl1p" path="res://pixelsart/Uranus_Pixel_11Px.ttf" id="10_jaqkm"]
+[ext_resource type="Script" uid="uid://bodjjfs4igasm" path="res://scence/ins.gd" id="10_qmf6k"]
+[ext_resource type="AudioStream" uid="uid://duoxrlkwo1kji" path="res://music/fight.mp3" id="14_qmf6k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5tqxe"]
+font = ExtResource("10_jaqkm")
+font_size = 107
+
+[sub_resource type="LabelSettings" id="LabelSettings_hj3k0"]
+font = ExtResource("10_jaqkm")
+font_size = 116
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4nby"]
+font = ExtResource("10_jaqkm")
+font_size = 87
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5tqxe"]
+distance = -597.0
+
+[node name="ms" type="Node2D" unique_id=263570017]
+y_sort_enabled = true
+script = ExtResource("1_nkl5o")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1189524729]
+position = Vector2(23, -492)
+scale = Vector2(4.4276423, 4.5959415)
+texture = ExtResource("1_5e5gi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=579872143]
+texture = ExtResource("1_f1lcf")
+metadata/_edit_lock_ = true
+
+[node name="heatheart" parent="." unique_id=1808611668 instance=ExtResource("5_xiwrf")]
+z_index = 6
+position = Vector2(-21, 160)
+
+[node name="player" parent="." unique_id=631919823 instance=ExtResource("2_fnono")]
+position = Vector2(-27, 160)
+
+[node name="Area2D" parent="." unique_id=69017091 instance=ExtResource("3_hid7t")]
+position = Vector2(-318, 125)
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=233171387 node_paths=PackedStringArray("testHP", "testEXP", "testLevel")]
+script = ExtResource("6_q312n")
+testHP = NodePath("HP_number/Label")
+testEXP = NodePath("EXP_number/Label")
+testLevel = NodePath("Level_number/Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="ui" unique_id=1916073641]
+position = Vector2(107.00003, 70.75)
+scale = Vector2(0.22765952, 0.113425925)
+texture = ExtResource("7_hdle2")
+
+[node name="level" type="Sprite2D" parent="ui" unique_id=1792790486]
+position = Vector2(52, 112)
+scale = Vector2(0.17659277, 0.27475244)
+texture = ExtResource("9_hsfsx")
+
+[node name="Label" type="Label" parent="ui/level" unique_id=871397883]
+offset_left = -96.26668
+offset_top = -58.23424
+offset_right = 109.73332
+offset_bottom = 49.76576
+text = "level"
+label_settings = SubResource("LabelSettings_5tqxe")
+
+[node name="exp" type="Sprite2D" parent="ui" unique_id=1468886502]
+position = Vector2(52, 79.5)
+scale = Vector2(0.17659277, 0.27475244)
+texture = ExtResource("9_hsfsx")
+
+[node name="Label" type="Label" parent="ui/exp" unique_id=1319685805]
+offset_left = -96.26668
+offset_top = -58.23424
+offset_right = 109.73332
+offset_bottom = 49.76576
+text = "EXP"
+label_settings = SubResource("LabelSettings_5tqxe")
+
+[node name="HP" type="Sprite2D" parent="ui" unique_id=1330422562]
+position = Vector2(52, 47)
+scale = Vector2(0.17659277, 0.27475244)
+texture = ExtResource("9_hsfsx")
+
+[node name="Label" type="Label" parent="ui/HP" unique_id=2036906508]
+offset_left = -96.26668
+offset_top = -58.23424
+offset_right = 109.73332
+offset_bottom = 49.76576
+text = "HP"
+label_settings = SubResource("LabelSettings_5tqxe")
+
+[node name="Level_number" type="Sprite2D" parent="ui" unique_id=894010455]
+position = Vector2(165, 112)
+scale = Vector2(0.17659277, 0.27475244)
+texture = ExtResource("9_hsfsx")
+
+[node name="Label" type="Label" parent="ui/Level_number" unique_id=307416790]
+offset_left = -96.26668
+offset_top = -58.23424
+offset_right = 109.73332
+offset_bottom = 49.76576
+text = "level"
+label_settings = SubResource("LabelSettings_5tqxe")
+
+[node name="EXP_number" type="Sprite2D" parent="ui" unique_id=2039667509]
+position = Vector2(165, 79.5)
+scale = Vector2(0.17659277, 0.27475244)
+texture = ExtResource("9_hsfsx")
+
+[node name="Label" type="Label" parent="ui/EXP_number" unique_id=873202517]
+offset_left = -96.26668
+offset_top = -58.23424
+offset_right = 109.73332
+offset_bottom = 49.76576
+text = "level"
+label_settings = SubResource("LabelSettings_5tqxe")
+
+[node name="HP_number" type="Sprite2D" parent="ui" unique_id=991689138]
+position = Vector2(165, 47)
+scale = Vector2(0.17659277, 0.27475244)
+texture = ExtResource("9_hsfsx")
+
+[node name="Label" type="Label" parent="ui/HP_number" unique_id=647994847]
+offset_left = -96.26668
+offset_top = -58.23424
+offset_right = 109.73332
+offset_bottom = 49.76576
+text = "level"
+label_settings = SubResource("LabelSettings_5tqxe")
+
+[node name="ins" type="Sprite2D" parent="ui" unique_id=1409186727]
+position = Vector2(104.511246, 298.50128)
+scale = Vector2(0.21806118, 0.18055321)
+texture = ExtResource("7_hdle2")
+script = ExtResource("10_qmf6k")
+
+[node name="heat" type="Sprite2D" parent="ui/ins" unique_id=1876079863]
+position = Vector2(-350.87057, -252.00781)
+scale = Vector2(2.2897434, 4.9336967)
+texture = ExtResource("10_hsfsx")
+
+[node name="Label" type="Label" parent="ui/ins" unique_id=407857388]
+offset_left = -199.53687
+offset_top = -319.77332
+offset_right = 264.46313
+offset_bottom = -201.18384
+text = "炽热之心"
+label_settings = SubResource("LabelSettings_hj3k0")
+
+[node name="Label2" type="Label" parent="ui/ins" unique_id=581733640]
+offset_left = -447.1738
+offset_top = -85.85428
+offset_right = 424.14145
+offset_bottom = 479.0759
+text = "可以在角色身边召唤
+环绕着它的心灵之火，
+初始攻击力为5，召
+唤上限为5"
+label_settings = SubResource("LabelSettings_u4nby")
+autowrap_mode = 2
+
+[node name="palce" type="Node2D" parent="." unique_id=511844583]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="palce" unique_id=1578876565]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="palce/StaticBody2D" unique_id=610241521]
+shape = SubResource("WorldBoundaryShape2D_5tqxe")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="palce" unique_id=400781770]
+rotation = 4.712389
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="palce/StaticBody2D2" unique_id=1265101580]
+position = Vector2(-2.0000017, -148)
+shape = SubResource("WorldBoundaryShape2D_5tqxe")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="palce" unique_id=1158005845]
+rotation = -3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="palce/StaticBody2D3" unique_id=180110363]
+position = Vector2(-8.000015, -595)
+shape = SubResource("WorldBoundaryShape2D_5tqxe")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="palce" unique_id=457662432]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="palce/StaticBody2D4" unique_id=1740791312]
+position = Vector2(145, -3)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_5tqxe")
+
+[node name="Area2D2" parent="." unique_id=474541543 instance=ExtResource("7_4bk23")]
+position = Vector2(123, 110)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=988116313]
+stream = ExtResource("14_qmf6k")
+autoplay = true

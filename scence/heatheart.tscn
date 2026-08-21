@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bn4v86ve13k5x"]
+
+[ext_resource type="Script" uid="uid://d2t4wa0b1jhxi" path="res://scrpit/heatheart.gd" id="1_0xfi6"]
+[ext_resource type="Texture2D" uid="uid://d3fh0n015xig3" path="res://pixelsart/relic/PNG/Transperent/Icon1.png" id="2_t0ueb"]
+[ext_resource type="PackedScene" uid="uid://b7jo15gxxkkfu" path="res://scence/heart_fire.tscn" id="2_yocf1"]
+
+[node name="heatheart" type="Node2D" unique_id=1808611668 groups=["stuff"]]
+script = ExtResource("1_0xfi6")
+bullet_scene = ExtResource("2_yocf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2063673332]
+position = Vector2(-2.3841858e-07, 0)
+scale = Vector2(0.234375, 0.546875)
+texture = ExtResource("2_t0ueb")

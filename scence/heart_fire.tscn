@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://b7jo15gxxkkfu"]
+
+[ext_resource type="Texture2D" uid="uid://bnmxinkhfuflo" path="res://pixelsart/main/sprite-sheet-32px.png" id="1_3ldip"]
+[ext_resource type="Script" uid="uid://c8ynydho50oj1" path="res://scrpit/heart_fire.gd" id="1_jonab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jonab"]
+atlas = ExtResource("1_3ldip")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aax7"]
+atlas = ExtResource("1_3ldip")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3urp8"]
+atlas = ExtResource("1_3ldip")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6if7u"]
+atlas = ExtResource("1_3ldip")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnnrc"]
+atlas = ExtResource("1_3ldip")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmks3"]
+atlas = ExtResource("1_3ldip")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhyah"]
+atlas = ExtResource("1_3ldip")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2lik"]
+atlas = ExtResource("1_3ldip")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tqxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jonab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aax7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3urp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6if7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnnrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmks3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhyah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2lik")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yocf1"]
+radius = 16.124516
+
+[node name="heart_fire" type="Node2D" unique_id=1168597121 groups=["heartfire"]]
+script = ExtResource("1_jonab")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=113439813]
+sprite_frames = SubResource("SpriteFrames_5tqxe")
+autoplay = "default"
+frame = 6
+frame_progress = 0.99075484
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2136916134]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1135327556]
+shape = SubResource("CircleShape2D_yocf1")
+
+[connection signal="area_entered" from="Area2D" to="." method="hitted"]

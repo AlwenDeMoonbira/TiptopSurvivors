@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ctyrgs3t216fj"]
+
+[ext_resource type="FontFile" uid="uid://bopxh3qb4sl1p" path="res://pixelsart/Uranus_Pixel_11Px.ttf" id="1_6vw32"]
+[ext_resource type="Script" uid="uid://cym2y2qrqyef8" path="res://scrpit/number.gd" id="1_j1n4o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0q1wa"]
+font = ExtResource("1_6vw32")
+font_size = 25
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="number" type="Node2D" unique_id=650760238]
+script = ExtResource("1_j1n4o")
+
+[node name="Label" type="Label" parent="." unique_id=606133900]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "1"
+label_settings = SubResource("LabelSettings_0q1wa")

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cn7xvs0xtv208"]
+
+[ext_resource type="Texture2D" uid="uid://g45fafmsk05g" path="res://pixelsart/start.png" id="1_n2vq8"]
+[ext_resource type="Script" uid="uid://cy3rqawkse47b" path="res://scrpit/startbg.gd" id="2_t3pi7"]
+[ext_resource type="Script" uid="uid://khujl7odgice" path="res://scrpit/start.gd" id="3_jvytb"]
+[ext_resource type="FontFile" uid="uid://bopxh3qb4sl1p" path="res://pixelsart/Uranus_Pixel_11Px.ttf" id="4_jvytb"]
+[ext_resource type="Script" uid="uid://ba4fjdv203rdh" path="res://scrpit/startgame.gd" id="4_wu8ut"]
+[ext_resource type="Script" uid="uid://8xuc186dirkj" path="res://scrpit/quit.gd" id="5_4rs82"]
+[ext_resource type="AudioStream" uid="uid://bb4pw1233aciw" path="res://music/start.mp3" id="7_dcx7l"]
+
+[node name="Node2D" type="Node2D" unique_id=1384614363]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1547157148]
+limit_left = -793
+limit_top = -349
+limit_right = 640
+limit_bottom = 435
+script = ExtResource("3_jvytb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=720415243]
+position = Vector2(0, -5.9999924)
+scale = Vector2(1.8029513, 1.9452224)
+texture = ExtResource("1_n2vq8")
+script = ExtResource("2_t3pi7")
+
+[node name="startgame" type="Button" parent="." unique_id=1441243626]
+offset_left = -461.0
+offset_top = -184.0
+offset_right = 74.0
+offset_bottom = -79.0
+script = ExtResource("4_wu8ut")
+
+[node name="Label" type="Label" parent="startgame" unique_id=1183441207]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -10.0
+offset_right = 519.0
+offset_bottom = 110.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("4_jvytb")
+theme_override_font_sizes/font_size = 120
+text = "StartGame"
+
+[node name="option" type="Button" parent="." unique_id=1636483485]
+offset_left = 82.0
+offset_top = -17.0
+offset_right = 432.0
+offset_bottom = 79.0
+
+[node name="Label" type="Label" parent="option" unique_id=1799879507]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -21.0
+offset_right = 345.0
+offset_bottom = 99.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("4_jvytb")
+theme_override_font_sizes/font_size = 120
+text = "Option"
+
+[node name="quit" type="Button" parent="." unique_id=512768708]
+offset_left = -492.0
+offset_top = 111.0
+offset_right = -10.0
+offset_bottom = 195.0
+script = ExtResource("5_4rs82")
+
+[node name="Label" type="Label" parent="quit" unique_id=1185850224]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -20.0
+offset_right = 476.0
+offset_bottom = 100.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("4_jvytb")
+theme_override_font_sizes/font_size = 120
+text = "QuitGame"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2071246546]
+stream = ExtResource("7_dcx7l")
+autoplay = true

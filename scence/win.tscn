@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dc1qq68am0x5s"]
+
+[ext_resource type="Texture2D" uid="uid://cduq0xlbl4hfg" path="res://pixelsart/main/bg.png" id="1_erpsd"]
+[ext_resource type="FontFile" uid="uid://bopxh3qb4sl1p" path="res://pixelsart/Uranus_Pixel_11Px.ttf" id="2_7vq77"]
+[ext_resource type="Script" uid="uid://qs8lot41my1b" path="res://scrpit/button/try_again.gd" id="3_gvsft"]
+[ext_resource type="Script" uid="uid://bynjfmth7kbvi" path="res://scrpit/button/quit_game.gd" id="4_st8gh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_buedi"]
+font = ExtResource("2_7vq77")
+font_size = 165
+
+[sub_resource type="LabelSettings" id="LabelSettings_5tqxe"]
+font = ExtResource("2_7vq77")
+font_size = 59
+
+[node name="win" type="Node2D" unique_id=553666213]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2099550365]
+position = Vector2(27.999985, -7.500019)
+scale = Vector2(2.5268292, 0.9805194)
+texture = ExtResource("1_erpsd")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=466073746]
+
+[node name="Label" type="Label" parent="." unique_id=1863902420]
+offset_left = -345.0
+offset_top = -304.0
+offset_right = 350.0
+offset_bottom = -139.0
+text = "You Win!"
+label_settings = SubResource("LabelSettings_buedi")
+
+[node name="Label" type="Label" parent="Label" unique_id=291487760]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 197.0
+offset_right = 626.0
+offset_bottom = 257.0
+text = "感谢游玩我们的demo"
+label_settings = SubResource("LabelSettings_5tqxe")
+
+[node name="TryAgain" type="Button" parent="." unique_id=1994059454]
+offset_left = -367.0
+offset_top = 61.0
+offset_right = -58.0
+offset_bottom = 164.0
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("2_7vq77")
+theme_override_font_sizes/font_size = 68
+text = "Try again?"
+script = ExtResource("3_gvsft")
+
+[node name="QuitGame" type="Button" parent="." unique_id=652615734]
+offset_left = 107.0
+offset_top = 67.0
+offset_right = 392.0
+offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("2_7vq77")
+theme_override_font_sizes/font_size = 68
+text = "Quit game"
+script = ExtResource("4_st8gh")
+
+[connection signal="button_up" from="TryAgain" to="TryAgain" method="reset"]
+[connection signal="button_up" from="QuitGame" to="QuitGame" method="quit"]

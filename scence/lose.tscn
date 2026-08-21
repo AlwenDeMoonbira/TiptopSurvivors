@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://8pj4162gttcg"]
+
+[ext_resource type="Texture2D" uid="uid://cduq0xlbl4hfg" path="res://pixelsart/main/bg.png" id="1_ptu30"]
+[ext_resource type="FontFile" uid="uid://bopxh3qb4sl1p" path="res://pixelsart/Uranus_Pixel_11Px.ttf" id="2_33481"]
+[ext_resource type="Script" uid="uid://qs8lot41my1b" path="res://scrpit/button/try_again.gd" id="3_2ohtr"]
+[ext_resource type="Script" uid="uid://bynjfmth7kbvi" path="res://scrpit/button/quit_game.gd" id="4_p54sn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5tqxe"]
+font = ExtResource("2_33481")
+font_size = 165
+
+[node name="lose" type="Node2D" unique_id=342650955]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=974774956]
+position = Vector2(-18, 14)
+scale = Vector2(2.8012192, 1.4220778)
+texture = ExtResource("1_ptu30")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="." unique_id=2076262929]
+offset_left = -345.0
+offset_top = -304.0
+offset_right = 350.0
+offset_bottom = -139.0
+text = "You Lose!"
+label_settings = SubResource("LabelSettings_5tqxe")
+
+[node name="TryAgain" type="Button" parent="." unique_id=1702144597]
+offset_left = -367.0
+offset_top = 61.0
+offset_right = -58.0
+offset_bottom = 164.0
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("2_33481")
+theme_override_font_sizes/font_size = 68
+text = "Try again?"
+script = ExtResource("3_2ohtr")
+
+[node name="QuitGame" type="Button" parent="." unique_id=771066456]
+offset_left = 107.0
+offset_top = 67.0
+offset_right = 392.0
+offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("2_33481")
+theme_override_font_sizes/font_size = 68
+text = "Quit game"
+script = ExtResource("4_p54sn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1437817842]
+
+[connection signal="button_up" from="TryAgain" to="TryAgain" method="reset"]
+[connection signal="button_up" from="QuitGame" to="QuitGame" method="quit"]
